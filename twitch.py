@@ -79,6 +79,7 @@ if __name__ == "__main__":
                         frequency = int(chat_message['message'])
                     elif chat_message['message'] == "!off":
                         chatstream.send_chat_message("switching off! bye")
+                        break
 
             # If there are not enough video frames left,
             # add some more.
@@ -104,4 +105,4 @@ if __name__ == "__main__":
             # the buffers run dry, audio and video will go out of sync.
             else:
                 time.sleep(.001)
-        print('bye')
+    print('bye')
