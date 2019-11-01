@@ -35,7 +35,7 @@ with TwitchBufferedOutputStream(
 	     #   left_audio = np.random.randn(2940)
 	      #  right_audio = np.random.randn(2940)
 	       # videostream.send_audio(left_audio, right_audio)
-             elif videostream.get_audio_buffer_state() < 30:
+            elif videostream.get_audio_buffer_state() < 30:
                 x = np.linspace(last_phase,
                                 last_phase +
                                 frequency*2*np.pi/videostream.fps,
