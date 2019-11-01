@@ -33,8 +33,8 @@ if __name__ == "__main__":
     # * one stream to interact with the chat
     with TwitchBufferedOutputStream(
             twitch_stream_key=args.streamkey,
-            width=320,
-            height=240,
+            width=8,
+            height=6,
             fps=15.,
             enable_audio=True,
             verbose=False) as videostream, \
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         # Send a chat message to let everybody know you've arrived
         chatstream.send_chat_message("Taking requests!")
 
-        frame = np.zeros((240, 320, 3))
+        frame = np.zeros((6, 8, 3))
         frequency = 100
         last_phase = 0
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
             # If there are not enough video frames left,
             # add some more.
-            if videostream.get_video_frame_buffer_state() < 30:
+            if videostream.get_video_frame_buffer_state() < 15:
                 videostream.send_video_frame(frame)
 
             # If there are not enough audio fragments left,
