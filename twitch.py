@@ -44,7 +44,7 @@ if __name__ == "__main__":
             verbose=False) as chatstream:
 
         # Send a chat message to let everybody know you've arrived
-        chatstream.send_chat_message("Taking requests!")
+        chatstream.send_chat_message("Taking requests! blue red green, 50-20000. type !off to stop")
 
         frame = np.zeros((6, 8, 3))
         frequency = 100
@@ -78,7 +78,7 @@ if __name__ == "__main__":
                     elif chat_message['message'].isdigit():
                         frequency = int(chat_message['message'])
                     elif chat_message['message'] == "!off":
-                        break
+                        chatstream.send_chat_message("switching off! bye")
 
             # If there are not enough video frames left,
             # add some more.
