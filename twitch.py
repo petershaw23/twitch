@@ -104,4 +104,4 @@ if __name__ == "__main__":
             # the buffers run dry, audio and video will go out of sync.
             else:
                 time.sleep(.001)
-            print('bye')
+        print('bye')
