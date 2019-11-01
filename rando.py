@@ -28,7 +28,7 @@ with TwitchBufferedOutputStream(
 
 	while True:
 	    if videostream.get_video_frame_buffer_state() < 60:
-	        frame = np.random.rand(1, 1, 3)
+	        frame = np.random.rand(6, 8, 1)
 	        videostream.send_video_frame(frame)
 
 	    #if videostream.get_audio_buffer_state() < 10:
