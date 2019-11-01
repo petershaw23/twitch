@@ -80,6 +80,7 @@ if __name__ == "__main__":
                     elif chat_message['message'] == "!off":
                         chatstream.send_chat_message("switching off! bye")
                         print('bye')
+                        time.sleep(1)
                         quit()
 
             # If there are not enough video frames left,
