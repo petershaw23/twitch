@@ -44,7 +44,7 @@ if __name__ == "__main__":
             verbose=False) as chatstream:
 
         # Send a chat message to let everybody know you've arrived
-        chatstream.send_chat_message("Taking requests! blue red green, 50-20000. type !off to stop")
+        chatstream.send_chat_message("COLOR GAME! type blue red green, 50-20000. type !off to stop")
 
         frame = np.zeros((6, 8, 3))
         frequency = 100
