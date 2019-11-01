@@ -18,12 +18,12 @@ with TwitchBufferedOutputStream(
 	    twitch_stream_key=args.streamkey,
 	    width=320,
 	    height=240,
-	    fps=10.,
+	    fps=20.,
 	    verbose=True,
 	    enable_audio=True) as videostream:
 
 	frame = np.zeros((240, 320, 3))
-	frequency = 100
+	frequency = 115
         last_phase = 0
 
 	while True:
