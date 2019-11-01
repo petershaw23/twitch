@@ -16,26 +16,26 @@ if __name__ == "__main__":
  
 with TwitchBufferedOutputStream(
 	    twitch_stream_key=args.streamkey,
-	    width=24,
-	    height=18,
-	    fps=30.,
+	    width=4,
+	    height=3,
+	    fps=60.,
 	    verbose=True,
 	    enable_audio=True) as videostream:
 
-	frame = np.zeros((18, 24, 3))
+	frame = np.zeros((3, 4, 3))
 	frequency = 115
         last_phase = 0
 
 	while True:
-	    if videostream.get_video_frame_buffer_state() < 30:
-	        frame = np.random.rand(18, 24, 3)
+	    if videostream.get_video_frame_buffer_state() < 60:
+	        frame = np.random.rand(3, 4, 3)
 	        videostream.send_video_frame(frame)
 
 	    #if videostream.get_audio_buffer_state() < 10:
 	     #   left_audio = np.random.randn(2940)
 	      #  right_audio = np.random.randn(2940)
 	       # videostream.send_audio(left_audio, right_audio)
-            elif videostream.get_audio_buffer_state() < 30:
+            elif videostream.get_audio_buffer_state() < 60:
                 x = np.linspace(last_phase,
                                 last_phase +
                                 frequency*2*np.pi/videostream.fps,
