@@ -16,19 +16,19 @@ if __name__ == "__main__":
  
 with TwitchBufferedOutputStream(
 	    twitch_stream_key=args.streamkey,
-	    width=320,
-	    height=240,
-	    fps=20.,
+	    width=240,
+	    height=180,
+	    fps=30.,
 	    verbose=True,
 	    enable_audio=True) as videostream:
 
-	frame = np.zeros((240, 320, 3))
+	frame = np.zeros((180, 240, 3))
 	frequency = 115
         last_phase = 0
 
 	while True:
 	    if videostream.get_video_frame_buffer_state() < 10:
-	        frame = np.random.rand(240, 320, 3)
+	        frame = np.random.rand(180, 240, 3)
 	        videostream.send_video_frame(frame)
 
 	    #if videostream.get_audio_buffer_state() < 10:
