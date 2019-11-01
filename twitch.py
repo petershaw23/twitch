@@ -33,9 +33,9 @@ if __name__ == "__main__":
     # * one stream to interact with the chat
     with TwitchBufferedOutputStream(
             twitch_stream_key=args.streamkey,
-            width=640,
-            height=480,
-            fps=30.,
+            width=320,
+            height=240,
+            fps=15.,
             enable_audio=True,
             verbose=False) as videostream, \
         TwitchChatStream(
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         # Send a chat message to let everybody know you've arrived
         chatstream.send_chat_message("Taking requests!")
 
-        frame = np.zeros((480, 640, 3))
+        frame = np.zeros((240, 320, 3))
         frequency = 100
         last_phase = 0
 
